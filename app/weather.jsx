@@ -187,6 +187,7 @@ export default function Weather() {
       </View>
     );
   }
+  const rainfallData = weatherData?.rain ? weatherData.rain['1h'] || weatherData.rain['3h'] || 0 : 0; 
 
   return (
     <View style={styles.container}>
@@ -219,6 +220,12 @@ export default function Weather() {
             <MaterialIcons name="air" size={24} color={Colors.PRIMARY} />
             <Text style={styles.infoText}>
               Wind Speed: {weatherData.wind.speed} m/s
+            </Text>
+          </View>
+          <View style={styles.infoRow}>
+            <MaterialIcons name="grain" size={24} color={Colors.PRIMARY} />
+            <Text style={styles.infoText}>
+              Rainfall: {rainfallData} mm
             </Text>
           </View>
         </View>
