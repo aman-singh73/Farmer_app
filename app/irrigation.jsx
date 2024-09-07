@@ -29,17 +29,13 @@ export default function irrigation() {
         Temperature: cleanValue(soilMoisture),
         SoilHumidity: cleanValue(humidity),
       });
+      console.log('API Response:', response.data);
       setPrediction(response.data)
       // console.log(prediction);
     } catch (error) {
       console.error(error);
     }
   };
-
-
-
- 
-
 
   useEffect(() => { 
     const dataRef = ref(realTimeDatabase, '/data'); 
